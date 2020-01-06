@@ -50,11 +50,15 @@ h1 {
     text-align: center;
     height: 40px;
     cursor: pointer;
-    margin: 5% auto;
+    margin: 1.5% auto;
     
 }
 
 .flex-container {
     display: flex;
     justify-content: center;
+}
+
+.newClone {
+    color: darkred;
 }
