@@ -11,6 +11,24 @@ for (let i = 0; i < rep.length; i++){
         holder.obj.style.backgroundColor = "green";
         holder.obj.style.left = rep[i].offsetLeft + 100 + "px";
         holder.obj.style.top =  rep[i].offsetTop + 200 + "px";
+        holder.obj.moves = Math.floor(Math.random() * 25);
+        
+        holder.obj.StartX = rep[i].offsetLeft;
+        holder.obj.startY = rep[i].offsetTop;
+        
+        holder.obj.int = setInterval(mover,25);
+        
+        function mover(){
+            if(mover.obj.moves <= 0){
+                clearInterval(holder.obj.int);
+            }else{
+                holder.obj.moves--;
+                holder.obj.startY += 10;
+                holder.obj.startX += 1;
+                holder.obj.style.top = holder.obj.startY + "px";
+                holder.obj.style.left = holder.obj.startX + "px";
+            }
+        }
         
         document.body.appendChild(holder.obj);
     })
