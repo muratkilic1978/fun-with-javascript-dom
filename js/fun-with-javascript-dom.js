@@ -8,8 +8,8 @@ for (let i = 0; i < rep.length; i++){
         holder.obj = rep[i].cloneNode(true);
         holder.obj.style.cursor = "move";
         holder.obj.classList.add("newClone");
-        holder.obj.style.backgroundColor = "green";
-        holder.obj.style.left = rep[i].offsetLeft + 100 + "px";
+        holder.obj.style.backgroundColor = "#ddfd43";
+        holder.obj.style.left = rep[i].offsetLeft + "px";
         holder.obj.style.top =  rep[i].offsetTop + 200 + "px";
         holder.obj.moves = Math.floor(Math.random() * 25);
         
@@ -19,7 +19,7 @@ for (let i = 0; i < rep.length; i++){
         holder.obj.int = setInterval(mover,25);
         
         function mover(){
-            if(mover.obj.moves <= 0){
+            if(holder.obj.moves <= 0){
                 clearInterval(holder.obj.int);
             }else{
                 holder.obj.moves--;
@@ -31,6 +31,8 @@ for (let i = 0; i < rep.length; i++){
         }
         
         document.body.appendChild(holder.obj);
+        console.log(holder.obj);
+
     })
-    rep[i].style.left = i * 140 + "px";
+    rep[i].style.left = i * 150 + "px";
 }
